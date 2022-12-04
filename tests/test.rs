@@ -145,6 +145,8 @@ fn test_retained() {
     let buf = builder.finished_data().to_vec();
     let monster = flatbuffers_retained::Retained::<Monster>::new_unprefixed(buf).unwrap();
 
+    assert_eq!(&builder.finished_data(), &monster.as_ref());
+
     // Make sure this fails to validate in a size-prefixed way.
     flatbuffers_retained::Retained::<Monster>::new_size_prefixed(builder.finished_data().to_vec())
         .map(|_| false)
@@ -174,4 +176,7 @@ fn test_retained() {
     assert_eq!(monster2_ptr.hp(), 81);
 
     assert_eq!(monster.get().hp(), 80);
+
+    let slice: &[u8] = (&monster2).into();
+    assert_eq!(slice, builder.finished_data());
 }
