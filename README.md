@@ -20,6 +20,17 @@ This library exposes 3 structs:
 
 # Example
 
+A basic example, modified from the tutorial
+https://google.github.io/flatbuffers/flatbuffers_guide_tutorial.html
+is present in examples/basic.rs
+
+it can be run by invoking
+`cargo run --example basic`
+
+An example of how this can be used to store data inside
+acceleration structures may be observed here.
+The test `test_stored_in_map` in tests/test.rs contains a full example.
+
 ```rust
 #[derive(Default)]
 struct MonstersHolder<'a> {
