@@ -1,6 +1,6 @@
 [package]
 name = "flatbuffers-retained"
-version = "0.2.0"
+version = "0.3.0"
 edition = "2021"
 authors = ["Daniel Reiter Horn <danielrh@users.sourceforge.net>"]
 description = "This library allows a user to validate a flatbuffer once and the move it around or store it in a data structure without keeping the buffer borrowed. Then later it can be used again without re-validation."
@@ -15,7 +15,7 @@ readme = "README.md"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-flatbuffers="~22.10"
+flatbuffers="~23.5"
 
 [[example]]
 name = "basic"
